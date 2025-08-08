@@ -34,7 +34,7 @@ class _homeState extends State<home> {
                     child: Image(image: AssetImage("assets/menu.png"))),
                 Container(
                   width: 250,
-                    margin: EdgeInsets.only(top: 20),
+                    margin: EdgeInsets.only(top: 20,),
 
                     child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -61,23 +61,23 @@ class _homeState extends State<home> {
             ),
 
           ),
-        Container(
-          margin: EdgeInsets.only(top:230),
-          height: 230,
-          width: 400,
-          decoration: BoxDecoration(
-            color: Colors.black45,
-            borderRadius: BorderRadius.circular(40),
+          Container(
+            margin: EdgeInsets.only(top:230,left: 10,right: 10),
+            height: 230,
+            width: 400,
+            decoration: BoxDecoration(
+              color: Colors.black45,
+              borderRadius: BorderRadius.circular(40),
+            ),
+            alignment: Alignment.topLeft,
+            child: Container(
+              margin: EdgeInsets.only(left: 20,top: 10),
+              child: Text("Planets of the Day",
+                style: TextStyle(color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18),),
+            ),
           ),
-          alignment: Alignment.topLeft,
-          child: Container(
-            margin: EdgeInsets.only(left: 20,top: 10),
-            child: Text("Planets of the Day",
-              style: TextStyle(color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18),),
-          ),
-        ),
 Row(
   children: [
     Container(
@@ -132,7 +132,7 @@ Row(
     ]
       ),
           Container(
-            margin: EdgeInsets.only(top: 500),
+            margin: EdgeInsets.only(top: 500,left: 10,right: 10),
             height: 320,
             width: 400,
             decoration: BoxDecoration(

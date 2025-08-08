@@ -100,7 +100,7 @@ return null;
                           controller: password,
                           validator : (value){
                             if (value == null || value.isEmpty){
-                              return 'Please enter passord';
+                              return 'Please enter password';
                             }else if(value.contains('@')){
                               return 'Please don\'t use the @ char.';}
                            return null;

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_world/favourites.dart';
 import 'dart:math';
 import 'package:hello_world/main.dart';
 
@@ -10,7 +11,7 @@ class innerpage extends StatefulWidget {
 }
 
 class _innerpageState extends State<innerpage> {
-  Color _favIconColor = Colors.grey;
+  bool isfavouriteFav = false;
   @override
   Widget build(BuildContext context)
   {
@@ -31,25 +32,26 @@ body: Stack(
           width: 70,
           height: 70,),
         ),
-        Container(
-          margin: EdgeInsets.only(top: 80,left: 180),
-
-          child: IconButton(
-            icon: Icon(Icons.favorite),
-            iconSize: 40,
-            color:  _favIconColor,
-            tooltip: 'Add to favourite',
-            onPressed: (){
-              setState(() {
-                if(_favIconColor == Colors.grey){
-                  _favIconColor = Colors.red;
-                }else{
-                  _favIconColor = Colors.white;
-                }
-              });
-            },
-          ),
-        )
+       Positioned(
+         top: 200,
+         right: 60,
+         child: Container(
+           margin: EdgeInsets.only(top: 90,left: 180),
+           child: IconButton(
+             icon: Icon(
+               size: 35,
+               isfavouriteFav?
+                   Icons.favorite:Icons.favorite_border,
+               color: Colors.white,
+             ),
+             onPressed: (){
+               setState(() {
+                 isfavouriteFav =! isfavouriteFav;
+               });
+             },
+           ),
+         ),
+       )
       ],
     ),
     Container(
@@ -102,7 +104,7 @@ body: Stack(
                 child: Text("(m/s2)",style: TextStyle(color: Colors.white),),
               ),
               Container(
-                child: Text("9.8",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 25),),
+                child: Text("9.8",style: TextStyle(color: Colors.white,fontWeight:FontWeight.bold,fontSize: 25 ),),
               )
             ],
           ),
@@ -121,7 +123,7 @@ body: Stack(
                 child: Text("(hours)",style: TextStyle(color: Colors.white),),
               ),
               Container(
-                child:Text("24",style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),) ,)
+                child:Text("24",style: TextStyle(color: Colors.white,fontSize: 25,fontWeight: FontWeight.bold),) ,)
             ],
           ),
         ),
@@ -163,7 +165,7 @@ body: Stack(
                 child: Text("Temp(C)",style: TextStyle(color: Colors.white),),
               ),
               Container(
-                child: Text("15",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 25,),),
+                child: Text("15",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 25),),
               )
             ],
           ),
@@ -181,7 +183,7 @@ body: Stack(
                   child: Text("Distance from\nSun(106km)",style: TextStyle(color: Colors.white),),
                   ),
                   Container(
-                    child: Text("5.97",style: TextStyle(color: Colors.white,fontSize: 25,fontWeight: FontWeight.bold ),),
+                    child: Text("5.97",style: TextStyle(color: Colors.white,fontSize: 25,fontWeight: FontWeight.bold),),
                   )
                 ],
               )
@@ -202,7 +204,13 @@ body: Stack(
             end: Alignment.bottomRight,
         ),
       ),
-      child: TextButton(onPressed: (){},
+      child: TextButton(
+          onPressed: (){
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context)=>favourite())
+        );
+      },
           child: Text("Visit",style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),))
     ),
     Container(
