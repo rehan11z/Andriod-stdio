@@ -62,10 +62,17 @@ body: Stack(
     Row(
       children: [
         Container(
-          margin: EdgeInsets.only(bottom: 400,left: 50),
+          margin: EdgeInsets.only(bottom: 410,left: 35),
           child: CircleAvatar(
-            radius: 35,
-            backgroundImage: AssetImage("assets/123.png"),
+            radius:45,
+            backgroundColor: Colors.transparent,
+            child: ClipOval(
+              child: Image.asset("assets/image123.png",
+              width: 120,
+                height: 120,
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
         ),
         Container(
@@ -115,12 +122,26 @@ Column(
   children: [
     Transform.rotate(angle: 3.14/2),
     Container(
-      margin:EdgeInsets.only(top: 480,left: 90) ,
+      margin:EdgeInsets.only(top: 430,left: 60) ,
       child: new  CircularPercentIndicator(
-          radius: 100,
-        lineWidth: 15,
+          radius: 130,
+        lineWidth: 20,
           percent: 0.871,
-        center: new Text("87.1%",style: TextStyle(color: Colors.cyanAccent),),
+        center: Column(
+          children: [
+            Container(
+              margin: EdgeInsets.only(top: 67,left: 50),
+              height: 50,
+              width: 150,
+              child: Text("Perssonal Progress",style: TextStyle(color: Colors.white,fontSize: 20,fontWeight:FontWeight.bold ),),
+            ),
+            Container(
+              height: 65,
+              width: 140,
+              child: Text("87.1%",style: TextStyle(color: Colors.cyanAccent,fontSize: 50,fontWeight: FontWeight.bold),),
+            )
+          ],
+        ),
       linearGradient: LinearGradient(
         colors: [
       Color(0xFF00E5E5),
@@ -131,9 +152,9 @@ Column(
         end: Alignment.bottomRight
       ),
         backgroundColor: Colors.grey.shade800,
-        circularStrokeCap: CircularStrokeCap.round,
+        startAngle: 90,
       ),
-    )
+    ),
   ],
 ),
 Row(

@@ -158,6 +158,7 @@ return null;
             ),
             child: TextButton(
               onPressed: () {
+                if (_formKey.currentState!.validate())
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context)=> home()),
