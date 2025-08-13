@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_world/bottomnavbar.dart';
 import 'package:hello_world/home.dart';
 
 class login extends StatefulWidget {
@@ -76,7 +77,7 @@ return null;
                             fillColor: Colors.black,
                             hintStyle: TextStyle(color: Colors.white),
                             border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(40),
+                               borderRadius: BorderRadius.circular(40),
                               borderSide: BorderSide(width: 20),
                             ),
                             enabledBorder: OutlineInputBorder(
@@ -161,7 +162,7 @@ return null;
                 if (_formKey.currentState!.validate())
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context)=> home()),
+                  MaterialPageRoute(builder: (context)=> bottombar()),
                 );
               },
               style: TextButton.styleFrom(
