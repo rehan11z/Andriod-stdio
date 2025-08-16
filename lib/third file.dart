@@ -13,7 +13,7 @@ class _thirdState extends State<third> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Message",
-        style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30),),
+          style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30),),
         actions: [
           SizedBox(width: 10,),
           Icon(Icons.search),
@@ -28,7 +28,7 @@ class _thirdState extends State<third> {
           width: 300,
           color: Colors.brown,
           child: Text("Hi!",
-          style: TextStyle(fontSize: 20),),
+            style: TextStyle(fontSize: 20),),
         ),
       ),
     );

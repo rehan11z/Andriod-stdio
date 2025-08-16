@@ -16,10 +16,11 @@ class _innerpageState extends State<innerpage> {
   Widget build(BuildContext context)
   {
     return Scaffold(
-body: Stack(
+      body: SingleChildScrollView(
+child: Stack(
   children: [
     Container(
-      height: 900,
+      height: 1000,
     width: 400,
     child: Image(image: AssetImage("assets/splash.png"),
     fit: BoxFit.cover,),
@@ -57,7 +58,7 @@ body: Stack(
     Container(
       child: Padding(
         padding: const EdgeInsets.only(top: 80,left: 150),
-        child: Text("Earth",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 30),),
+        child: Text("Mars",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 30),),
       ),
       margin: EdgeInsets.only(top: 300),
       height: 700,
@@ -65,7 +66,6 @@ body: Stack(
       decoration: BoxDecoration(
         color: Colors.black45,
         borderRadius: BorderRadius.circular(40),
-
     ),
     ),
     Row(
@@ -219,7 +219,7 @@ body: Stack(
     )
   ],
 )
-
+      ),
     );
   }
 }

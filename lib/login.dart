@@ -19,7 +19,7 @@ class _loginState extends State<login> {
      key: _formKey,
       child: Scaffold(
         resizeToAvoidBottomInset: false,
-      body: Container(
+      body: SingleChildScrollView(
         child: Stack(
           children: [
             Container(
@@ -65,12 +65,12 @@ class _loginState extends State<login> {
                             if (value == null ||value.isEmpty){
                               return 'Please Enter Email';
                             }else if (!value.contains ('@') || !value.contains('.')) {
-                              return 'Enteer valid Email';
+                              return 'Enter valid Email';
                             }
 return null;
                           },
                           style: TextStyle(color: Colors.white),
-                          cursorColor: Colors.black,
+                          cursorColor: Colors.white,
                           keyboardType: TextInputType.text,
                           decoration: new InputDecoration(
                             filled: true,
@@ -109,7 +109,7 @@ return null;
 
                           style: TextStyle(color: Colors.white),
                           obscureText: true,
-                          cursorColor: Colors.black,
+                          cursorColor: Colors.white,
                           keyboardType: TextInputType.text,
                           decoration: new InputDecoration(
                             filled: true,

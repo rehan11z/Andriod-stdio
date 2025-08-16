@@ -18,6 +18,7 @@ import 'package:hello_world/screen2%20file.dart';
 import 'package:hello_world/second%20file.dart';
 import 'package:hello_world/sixth%20file.dart';
 import 'package:hello_world/splash.dart';
+import 'package:hello_world/tab%20bar.dart';
 import 'package:hello_world/textfields.dart';
 import 'package:hello_world/third%20file.dart';
 
@@ -56,7 +57,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       debugShowCheckedModeBanner: false,
-      home:bottombar()
+      home:splash(),
     );
   }
 }

@@ -17,10 +17,11 @@ class _profileState extends State<profile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-body: Stack(
+      body: SingleChildScrollView(
+child: Stack(
   children: [
     Container(
-      height:900,
+      height:1000,
       width: 400,
       child:Image(image: AssetImage("assets/splash.png"),
       fit: BoxFit.cover,) ,
@@ -62,7 +63,7 @@ body: Stack(
     Row(
       children: [
         Container(
-          margin: EdgeInsets.only(bottom: 410,left: 35),
+          margin: EdgeInsets.only(bottom: 10,left: 35),
           child: CircleAvatar(
             radius:45,
             backgroundColor: Colors.transparent,
@@ -76,7 +77,7 @@ body: Stack(
           ),
         ),
         Container(
-          margin: EdgeInsets.only(top: 220,left: 20),
+          margin: EdgeInsets.only(left: 20),
           child: Column(
             children: [
               Text("Arthur Dent",style: TextStyle(color: Colors.white,fontSize: 15,fontWeight: FontWeight.bold),),
@@ -84,8 +85,9 @@ body: Stack(
             ],
           ),
         ),
+        SizedBox(height: 450,),
         Container(
-            margin: EdgeInsets.only(bottom: 460,left: 90),
+            margin: EdgeInsets.only(left: 90),
             child: Icon(Icons.edit_outlined,color: Colors.white,))
       ],
     ),
@@ -126,7 +128,10 @@ Column(
       child: new  CircularPercentIndicator(
           radius: 130,
         lineWidth: 20,
-          percent: 0.871,
+          percent: 0.87,
+        animation: true,
+        animationDuration: 1000,
+        circularStrokeCap: CircularStrokeCap.round,
         center: Column(
           children: [
             Container(
@@ -161,6 +166,8 @@ Row(
   children: [
     Container(
       margin: EdgeInsets.only(top: 700,left: 60),
+      child :Transform.scale(
+        scale: 1.5,
       child: Checkbox(
         value: checkbox1,
         onChanged: (value){
@@ -168,8 +175,10 @@ Row(
             checkbox1=value!;
           });
         },
-        activeColor: Colors.blueAccent,
+        activeColor: Colors.grey,
+        checkColor: Colors.cyanAccent,
       ),
+    ),
     ),
     Container(
         margin: EdgeInsets.only(top: 700),
@@ -180,6 +189,8 @@ Row(
       children: [
         Container(
           margin: EdgeInsets.only(top: 740,left: 60),
+          child : Transform.scale(
+            scale: 1.5,
           child: Checkbox(
             value: checkbox2,
             onChanged: (value){
@@ -187,8 +198,10 @@ Row(
             checkbox2=value!;
           });
             },
-            activeColor: Colors.blueAccent,
+            activeColor: Colors.grey,
+            checkColor: Colors.cyanAccent,
           ),
+        ),
         ),
         Container(
             margin: EdgeInsets.only(top: 740),
@@ -196,7 +209,8 @@ Row(
       ],
     )
   ],
-    )
+    ),
+      )
     );
   }
 }

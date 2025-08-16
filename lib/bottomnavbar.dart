@@ -4,6 +4,7 @@ import 'package:hello_world/home.dart';
 import 'package:hello_world/innerpage.dart';
 import 'package:hello_world/listtile.dart';
 import 'package:hello_world/login.dart';
+import 'package:hello_world/profile.dart';
 
 
 class bottombar extends StatefulWidget {
@@ -19,7 +20,7 @@ class _bottombarState extends State<bottombar> {
   List myscreens = [
   home(),
   favourite(),
-  innerpage(),
+  profile(),
   ];
 
   ontapfuction(int index){
@@ -36,7 +37,13 @@ class _bottombarState extends State<bottombar> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
-      bottomNavigationBar: BottomNavigationBar(
+        body: myscreens.elementAt(selectedindex),
+      bottomNavigationBar: ClipRRect(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(30),
+          topRight: Radius.circular(30),
+        ),
+      child :BottomNavigationBar(
         currentIndex: selectedindex,
           selectedItemColor: Colors.white,
           unselectedItemColor: Colors.grey,
@@ -64,8 +71,7 @@ class _bottombarState extends State<bottombar> {
               label: 'More',
             ),
           ]),
-      body: myscreens.elementAt(selectedindex),
-
+      )
     );
   }
 }

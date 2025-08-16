@@ -72,6 +72,7 @@ class _favouriteState extends State<favourite> {
                 borderRadius: BorderRadius.circular(40),
               ),
             ),
+
             Row(
               children: [
                 Container(
