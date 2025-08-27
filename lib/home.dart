@@ -16,7 +16,40 @@ class _homeState extends State<home> {
   Widget build(BuildContext context) {
 
     return Scaffold(
+drawer: Drawer(
+  child: ListView(
+    children: [
+      DrawerHeader(
+        decoration: BoxDecoration(
+          color: Colors.white
+        ),
+        child: Text("Menu",style: TextStyle(color: Colors.blueAccent,fontSize: 24),),
+      ),
+      ListTile(
+        leading: Icon(Icons.home),
+        title: Text("Home"),
+        onTap: () {
+          Navigator.pop(context);
+        },
+      ),
+      ListTile(
+        leading: Icon(Icons.favorite),
+        title: Text("Favourite"),
+        onTap: () {
+          Navigator.pop(context);
+        },
+      ),
+      ListTile(
+        leading: Icon(Icons.info),
+        title: Text("Info"),
+        onTap: () {
+          Navigator.pop(context);
+        },
+      )
+    ],
+  ),
 
+),
         body: Stack(
             children: [
               Container(
@@ -120,10 +153,21 @@ class _homeState extends State<home> {
                             child: Row(
                               children: [
                                 TextButton(onPressed: (){
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(builder: (context) => innerpage()),
+                                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Oppning Mars details"),
+                                    duration: Duration(seconds: 5),
+                                    backgroundColor: Colors.blueAccent,
+                                    behavior: SnackBarBehavior.floating,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(12)
+                                    ),
+                                  ),
                                   );
+                                  Future.delayed(Duration(milliseconds: 500), () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => innerpage()),
+                                    );
+                                  });
                                 },
                                     child: Text("Details",style: TextStyle(color: Colors.white,fontSize: 16,fontWeight: FontWeight.bold),)),
                                 Icon(Icons.arrow_forward,color: Colors.cyanAccent,)

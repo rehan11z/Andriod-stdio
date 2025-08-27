@@ -14,6 +14,7 @@ class _profileState extends State<profile> {
   bool switch2 =true;
   bool checkbox1 =false;
   bool checkbox2 =true;
+  String selectedGender = "";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +36,7 @@ child: Stack(
             color: Colors.black45,
             borderRadius: BorderRadius.circular(30)
           ),
-          child: 
+          child:
           Row(
             children: [
               Container(
@@ -120,6 +121,7 @@ child: Stack(
       },
       ),
     ),
+
 Column(
   children: [
     Transform.rotate(angle: 3.14/2),
@@ -207,10 +209,49 @@ Row(
             margin: EdgeInsets.only(top: 740),
             child: Text("Notifications",style: TextStyle(color: Colors.white),))
       ],
+    ),
+
+    Container(
+      margin: EdgeInsets.only(top: 780,left: 60),
+      child: Row(
+        children: [
+          Radio<String>(
+            value: "Male",
+            groupValue: selectedGender,
+            onChanged: (value){
+              setState(() {
+      selectedGender = value!;
+              });
+              },
+            activeColor: Colors.cyanAccent,
+          ),
+          Text("Male",style: TextStyle(color: Colors.white),
+          ),
+        ],
+      ),
+    ),
+    SizedBox(height: 20,),
+    Container(
+      margin: EdgeInsets.only(top: 810,left: 60),
+      child: Row(
+        children: [
+          Radio<String>(
+            value: "Female",
+            groupValue: selectedGender,
+            onChanged: (value){
+              setState(() {
+                selectedGender = value!;
+              });
+            },
+            activeColor: Colors.cyanAccent,
+          ),
+          Text("Female",style: TextStyle(color: Colors.white),)
+        ],
+      ),
     )
   ],
-    ),
-      )
+),
+      ),
     );
   }
 }

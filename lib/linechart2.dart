@@ -34,7 +34,7 @@ class _graph2State extends State<graph2> {
               spots: [
                 FlSpot(0, 3),
                 FlSpot(2, 2),
-                FlSpot(4, 6),hg
+                FlSpot(4, 6),
                 FlSpot(6, 4),
                 FlSpot(8, 10),
                 FlSpot(10, 1),

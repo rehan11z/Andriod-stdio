@@ -1,15 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:hello_world/Test%20file.dart';
 import 'package:hello_world/assignment.dart';
+import 'package:hello_world/bottombarassignment.dart';
 import 'package:hello_world/circle2%20file.dart';
+import 'package:hello_world/circular%20progress%20indicator.dart';
+import 'package:hello_world/clander.dart';
+import 'package:hello_world/courosel%20slider.dart';
+import 'package:hello_world/dropdownlist.dart';
+import 'package:hello_world/facebook%20tabbar.dart';
 import 'package:hello_world/favourites.dart';
 import 'package:hello_world/fifth%20file.dart';
 import 'package:hello_world/first%20file.dart';
 import 'package:hello_world/home.dart';
 import 'package:hello_world/innerpage.dart';
+import 'package:hello_world/linechart.dart';
+import 'package:hello_world/linechart2.dart';
 import 'package:hello_world/listtile.dart';
 import 'package:hello_world/login.dart';
+import 'package:hello_world/onboarding%20screen.dart';
 import 'package:hello_world/profile.dart';
+import 'package:hello_world/safearea.dart';
 import 'package:hello_world/screen%201.dart';
 import 'package:hello_world/screen%203.dart';
 
@@ -58,7 +68,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       debugShowCheckedModeBanner: false,
-      home:tabbarscreen(),
+      home:graph2(),
     );
   }
 }
